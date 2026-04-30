@@ -1,0 +1,2 @@
+/usr/bin/ar qc librvc_core.a CMakeFiles/rvc_core.dir/src/world/Grid.cpp.o CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.o CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o
+/usr/bin/ranlib librvc_core.a

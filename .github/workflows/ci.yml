@@ -1,0 +1,51 @@
+name: build-test
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+
+jobs:
+  build-test:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake g++ clang clang-tidy gcovr
+
+      - name: Configure
+        run: |
+          cmake -B build \
+            -DCMAKE_BUILD_TYPE=Debug \
+            -DCMAKE_CXX_COMPILER=g++ \
+            -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+            -DCMAKE_CXX_FLAGS="--coverage -fprofile-arcs -ftest-coverage"
+
+      - name: Build
+        run: cmake --build build --parallel $(nproc)
+
+      - name: clang-tidy
+        run: |
+          run-clang-tidy -p build src/ 2>&1 | tee clang-tidy.log || true
+
+      - name: Test
+        run: ctest --test-dir build --output-on-failure
+
+      - name: Coverage
+        run: |
+          gcovr \
+            --root . \
+            --exclude 'tests/.*' \
+            --exclude '_deps/.*' \
+            --xml \
+            -o build/coverage.xml
+
+      - name: Upload to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          files: build/coverage.xml
+          fail_ci_if_error: false
