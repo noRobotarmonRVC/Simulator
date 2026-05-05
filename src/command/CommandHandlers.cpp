@@ -2,6 +2,7 @@
 #include <string>
 
 std::string FindDustHandler::execute(Grid& grid, RvcState& state) {
+    if (!state.isDustSensorOn()) return "DUST 0";
     auto [x, y] = state.position();
     bool hasDust = grid.hasDust(x, y);
     if (hasDust && state.isCleanerOn())
@@ -10,6 +11,7 @@ std::string FindDustHandler::execute(Grid& grid, RvcState& state) {
 }
 
 std::string FindObstacleHandler::execute(Grid& grid, RvcState& state) {
+    if (!state.isObstacleSensorOn()) return "OBSTACLE 0 0 0 0";
     auto front = state.cellInFront();
     auto left  = state.cellLeft();
     auto right = state.cellRight();
@@ -44,6 +46,26 @@ std::string RotateRightHandler::execute(Grid& /*grid*/, RvcState& state) {
 
 std::string StopMotionHandler::execute(Grid& /*grid*/, RvcState& state) {
     state.setMotion(Motion::Idle);
+    return "OK";
+}
+
+std::string DustSensorOnHandler::execute(Grid& /*grid*/, RvcState& state) {
+    state.setDustSensorOn(true);
+    return "OK";
+}
+
+std::string DustSensorOffHandler::execute(Grid& /*grid*/, RvcState& state) {
+    state.setDustSensorOn(false);
+    return "OK";
+}
+
+std::string ObstacleSensorOnHandler::execute(Grid& /*grid*/, RvcState& state) {
+    state.setObstacleSensorOn(true);
+    return "OK";
+}
+
+std::string ObstacleSensorOffHandler::execute(Grid& /*grid*/, RvcState& state) {
+    state.setObstacleSensorOn(false);
     return "OK";
 }
 

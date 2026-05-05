@@ -66,3 +66,27 @@ public:
     std::string execute(Grid& grid, RvcState& state) override;
     std::string verb() const override { return "STOP_MOTOR"; }
 };
+
+class DustSensorOnHandler final : public ICommandHandler {
+public:
+    std::string execute(Grid& grid, RvcState& state) override;
+    std::string verb() const override { return "DUST_SENSOR_ON"; }
+};
+
+class DustSensorOffHandler final : public ICommandHandler {
+public:
+    std::string execute(Grid& grid, RvcState& state) override;
+    std::string verb() const override { return "DUST_SENSOR_OFF"; }
+};
+
+class ObstacleSensorOnHandler final : public ICommandHandler {
+public:
+    std::string execute(Grid& grid, RvcState& state) override;
+    std::string verb() const override { return "OBSTACLE_SENSOR_ON"; }
+};
+
+class ObstacleSensorOffHandler final : public ICommandHandler {
+public:
+    std::string execute(Grid& grid, RvcState& state) override;
+    std::string verb() const override { return "OBSTACLE_SENSOR_OFF"; }
+};

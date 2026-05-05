@@ -39,6 +39,10 @@ static void registerAllHandlers(CommandDispatcher& d) {
     d.registerHandler(std::make_unique<RotateLeftHandler>());
     d.registerHandler(std::make_unique<RotateRightHandler>());
     d.registerHandler(std::make_unique<StopMotionHandler>());
+    d.registerHandler(std::make_unique<DustSensorOnHandler>());
+    d.registerHandler(std::make_unique<DustSensorOffHandler>());
+    d.registerHandler(std::make_unique<ObstacleSensorOnHandler>());
+    d.registerHandler(std::make_unique<ObstacleSensorOffHandler>());
     d.registerHandler(std::make_unique<CleanerOnHandler>());
     d.registerHandler(std::make_unique<CleanerOffHandler>());
     d.registerHandler(std::make_unique<BoostModeHandler>());

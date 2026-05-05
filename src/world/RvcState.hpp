@@ -23,10 +23,14 @@ public:
     Point cellLeft()     const;
     Point cellRight()    const;
 
-    bool isCleanerOn()  const { return m_cleanerOn; }
-    bool isBoostMode()  const { return m_boostMode; }
-    void setCleanerOn(bool on)    { m_cleanerOn = on; }
-    void setBoostMode(bool boost) { m_boostMode = boost; }
+    bool isCleanerOn()      const { return m_cleanerOn; }
+    bool isBoostMode()      const { return m_boostMode; }
+    bool isDustSensorOn()     const { return m_dustSensorOn; }
+    bool isObstacleSensorOn() const { return m_obstacleSensorOn; }
+    void setCleanerOn(bool on)          { m_cleanerOn = on; }
+    void setBoostMode(bool boost)       { m_boostMode = boost; }
+    void setDustSensorOn(bool on)       { m_dustSensorOn = on; }
+    void setObstacleSensorOn(bool on)   { m_obstacleSensorOn = on; }
 
     Motion motion()           const { return m_motion; }
     void   setMotion(Motion m)      { m_motion = m; }
@@ -34,9 +38,11 @@ public:
 private:
     Point     m_pos;
     Direction m_dir;
-    bool      m_cleanerOn = false;
-    bool      m_boostMode = false;
-    Motion    m_motion    = Motion::Idle;
+    bool      m_cleanerOn        = false;
+    bool      m_boostMode        = false;
+    bool      m_dustSensorOn     = false;
+    bool      m_obstacleSensorOn = false;
+    Motion    m_motion           = Motion::Idle;
 
     Point step(Direction d) const;
 };
