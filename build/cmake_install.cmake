@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/wan2t/OOADProject/Simulator
+# Install script for directory: /home/wan/OOAD/Simulator/Simulator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/mnt/c/Users/wan2t/OOADProject/Simulator/build/tests/cmake_install.cmake")
+  include("/home/wan/OOAD/Simulator/Simulator/build/tests/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -55,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/c/Users/wan2t/OOADProject/Simulator/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/wan/OOAD/Simulator/Simulator/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

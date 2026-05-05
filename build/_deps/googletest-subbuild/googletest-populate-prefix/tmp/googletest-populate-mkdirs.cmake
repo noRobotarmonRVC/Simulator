@@ -4,19 +4,19 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src"
-  "/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-build"
-  "/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-subbuild/googletest-populate-prefix"
-  "/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-subbuild/googletest-populate-prefix/tmp"
-  "/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp"
-  "/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-subbuild/googletest-populate-prefix/src"
-  "/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp"
+  "/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src"
+  "/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-build"
+  "/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-subbuild/googletest-populate-prefix"
+  "/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-subbuild/googletest-populate-prefix/tmp"
+  "/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp"
+  "/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-subbuild/googletest-populate-prefix/src"
+  "/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp${cfgdir}") # cfgdir has leading slash
 endif()

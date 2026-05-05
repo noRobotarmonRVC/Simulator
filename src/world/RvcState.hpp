@@ -1,52 +1,37 @@
 #pragma once
 
-#include <cstdint>
+enum class Direction { North, East, South, West };
 
-/// Cardinal direction the RVC is facing.
-enum class Direction : uint8_t {
-    North = 0,  ///< negative-Y axis (up in grid)
-    East  = 1,  ///< positive-X axis (right)
-    South = 2,  ///< positive-Y axis (down)
-    West  = 3   ///< negative-X axis (left)
-};
+struct Point { int x, y; };
 
-/// 2-D grid coordinate.
-struct Position {
-    int x{0};
-    int y{0};
-
-    bool operator==(const Position& o) const noexcept { return x == o.x && y == o.y; }
-    bool operator!=(const Position& o) const noexcept { return !(*this == o); }
-};
-
-/// All mutable state that belongs to the robot vacuum cleaner.
 class RvcState {
 public:
-    RvcState(int startX, int startY, Direction dir = Direction::North);
+    RvcState(int x, int y, Direction dir);
 
-    // ── Accessors ────────────────────────────────────────────────────────
-    Position  position()    const noexcept { return m_pos; }
-    Direction direction()   const noexcept { return m_dir; }
-    bool      isCleanerOn() const noexcept { return m_cleanerOn; }
-    bool      isBoostMode() const noexcept { return m_boostMode; }
+    Point     position()  const { return m_pos; }
+    Direction direction() const { return m_dir; }
 
-    // ── Mutators ─────────────────────────────────────────────────────────
-    void setPosition (Position  pos)   noexcept { m_pos       = pos;   }
-    void setCleanerOn(bool      on)    noexcept { m_cleanerOn = on;    }
-    void setBoostMode(bool      boost) noexcept { m_boostMode = boost; }
+    void setPosition(Point p) { m_pos = p; }
+    void setDirection(Direction d) { m_dir = d; }
 
-    void rotateLeft()  noexcept;
-    void rotateRight() noexcept;
+    void rotateLeft();
+    void rotateRight();
 
-    // ── Relative-direction helpers (may return out-of-bounds positions) ──
-    Position cellInFront()  const noexcept;
-    Position cellBehind()   const noexcept;
-    Position cellToLeft()   const noexcept;
-    Position cellToRight()  const noexcept;
+    Point cellInFront()  const;
+    Point cellBehind()   const;
+    Point cellLeft()     const;
+    Point cellRight()    const;
+
+    bool isCleanerOn()  const { return m_cleanerOn; }
+    bool isBoostMode()  const { return m_boostMode; }
+    void setCleanerOn(bool on)    { m_cleanerOn = on; }
+    void setBoostMode(bool boost) { m_boostMode = boost; }
 
 private:
-    Position  m_pos;
+    Point     m_pos;
     Direction m_dir;
-    bool      m_cleanerOn{false};
-    bool      m_boostMode{false};
+    bool      m_cleanerOn = false;
+    bool      m_boostMode = false;
+
+    Point step(Direction d) const;
 };

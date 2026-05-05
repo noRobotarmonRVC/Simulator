@@ -1,5 +1,0 @@
-if(EXISTS "/mnt/c/Users/wan2t/OOADProject/Simulator/build/tests/rvc_tests[1]_tests.cmake")
-  include("/mnt/c/Users/wan2t/OOADProject/Simulator/build/tests/rvc_tests[1]_tests.cmake")
-else()
-  add_test(rvc_tests_NOT_BUILT rvc_tests_NOT_BUILT)
-endif()

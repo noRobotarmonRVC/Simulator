@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/wan2t/OOADProject/Simulator
+CMAKE_SOURCE_DIR = /home/wan/OOAD/Simulator/Simulator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/wan2t/OOADProject/Simulator/build
+CMAKE_BINARY_DIR = /home/wan/OOAD/Simulator/Simulator/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/wan2t/OOADProject/Simulator/build/CMakeFiles /mnt/c/Users/wan2t/OOADProject/Simulator/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wan/OOAD/Simulator/Simulator/build/CMakeFiles /home/wan/OOAD/Simulator/Simulator/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/wan2t/OOADProject/Simulator/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wan/OOAD/Simulator/Simulator/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -198,17 +198,43 @@ rvc_simulator/fast:
 .PHONY : rvc_simulator/fast
 
 #=============================================================================
-# Target rules for targets named rvc_tests
+# Target rules for targets named test_grid
 
 # Build rule for target.
-rvc_tests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rvc_tests
-.PHONY : rvc_tests
+test_grid: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_grid
+.PHONY : test_grid
 
 # fast build rule for target.
-rvc_tests/fast:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/rvc_tests.dir/build.make tests/CMakeFiles/rvc_tests.dir/build
-.PHONY : rvc_tests/fast
+test_grid/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_grid.dir/build.make tests/CMakeFiles/test_grid.dir/build
+.PHONY : test_grid/fast
+
+#=============================================================================
+# Target rules for targets named test_rvcstate
+
+# Build rule for target.
+test_rvcstate: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_rvcstate
+.PHONY : test_rvcstate
+
+# fast build rule for target.
+test_rvcstate/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_rvcstate.dir/build.make tests/CMakeFiles/test_rvcstate.dir/build
+.PHONY : test_rvcstate/fast
+
+#=============================================================================
+# Target rules for targets named test_dispatcher
+
+# Build rule for target.
+test_dispatcher: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_dispatcher
+.PHONY : test_dispatcher
+
+# fast build rule for target.
+test_dispatcher/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_dispatcher.dir/build.make tests/CMakeFiles/test_dispatcher.dir/build
+.PHONY : test_dispatcher/fast
 
 #=============================================================================
 # Target rules for targets named gmock
@@ -286,6 +312,30 @@ src/command/CommandDispatcher.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rvc_core.dir/build.make CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.s
 .PHONY : src/command/CommandDispatcher.cpp.s
 
+src/command/CommandHandlers.o: src/command/CommandHandlers.cpp.o
+.PHONY : src/command/CommandHandlers.o
+
+# target to build an object file
+src/command/CommandHandlers.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rvc_core.dir/build.make CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.o
+.PHONY : src/command/CommandHandlers.cpp.o
+
+src/command/CommandHandlers.i: src/command/CommandHandlers.cpp.i
+.PHONY : src/command/CommandHandlers.i
+
+# target to preprocess a source file
+src/command/CommandHandlers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rvc_core.dir/build.make CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.i
+.PHONY : src/command/CommandHandlers.cpp.i
+
+src/command/CommandHandlers.s: src/command/CommandHandlers.cpp.s
+.PHONY : src/command/CommandHandlers.s
+
+# target to generate assembly for a file
+src/command/CommandHandlers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rvc_core.dir/build.make CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.s
+.PHONY : src/command/CommandHandlers.cpp.s
+
 src/demo/Demo.o: src/demo/Demo.cpp.o
 .PHONY : src/demo/Demo.o
 
@@ -334,53 +384,29 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rvc_simulator.dir/build.make CMakeFiles/rvc_simulator.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/network/Session.o: src/network/Session.cpp.o
-.PHONY : src/network/Session.o
+src/network/UdpServer.o: src/network/UdpServer.cpp.o
+.PHONY : src/network/UdpServer.o
 
 # target to build an object file
-src/network/Session.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rvc_simulator.dir/build.make CMakeFiles/rvc_simulator.dir/src/network/Session.cpp.o
-.PHONY : src/network/Session.cpp.o
+src/network/UdpServer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rvc_simulator.dir/build.make CMakeFiles/rvc_simulator.dir/src/network/UdpServer.cpp.o
+.PHONY : src/network/UdpServer.cpp.o
 
-src/network/Session.i: src/network/Session.cpp.i
-.PHONY : src/network/Session.i
-
-# target to preprocess a source file
-src/network/Session.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rvc_simulator.dir/build.make CMakeFiles/rvc_simulator.dir/src/network/Session.cpp.i
-.PHONY : src/network/Session.cpp.i
-
-src/network/Session.s: src/network/Session.cpp.s
-.PHONY : src/network/Session.s
-
-# target to generate assembly for a file
-src/network/Session.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rvc_simulator.dir/build.make CMakeFiles/rvc_simulator.dir/src/network/Session.cpp.s
-.PHONY : src/network/Session.cpp.s
-
-src/network/TcpServer.o: src/network/TcpServer.cpp.o
-.PHONY : src/network/TcpServer.o
-
-# target to build an object file
-src/network/TcpServer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rvc_simulator.dir/build.make CMakeFiles/rvc_simulator.dir/src/network/TcpServer.cpp.o
-.PHONY : src/network/TcpServer.cpp.o
-
-src/network/TcpServer.i: src/network/TcpServer.cpp.i
-.PHONY : src/network/TcpServer.i
+src/network/UdpServer.i: src/network/UdpServer.cpp.i
+.PHONY : src/network/UdpServer.i
 
 # target to preprocess a source file
-src/network/TcpServer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rvc_simulator.dir/build.make CMakeFiles/rvc_simulator.dir/src/network/TcpServer.cpp.i
-.PHONY : src/network/TcpServer.cpp.i
+src/network/UdpServer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rvc_simulator.dir/build.make CMakeFiles/rvc_simulator.dir/src/network/UdpServer.cpp.i
+.PHONY : src/network/UdpServer.cpp.i
 
-src/network/TcpServer.s: src/network/TcpServer.cpp.s
-.PHONY : src/network/TcpServer.s
+src/network/UdpServer.s: src/network/UdpServer.cpp.s
+.PHONY : src/network/UdpServer.s
 
 # target to generate assembly for a file
-src/network/TcpServer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rvc_simulator.dir/build.make CMakeFiles/rvc_simulator.dir/src/network/TcpServer.cpp.s
-.PHONY : src/network/TcpServer.cpp.s
+src/network/UdpServer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rvc_simulator.dir/build.make CMakeFiles/rvc_simulator.dir/src/network/UdpServer.cpp.s
+.PHONY : src/network/UdpServer.cpp.s
 
 src/render/Renderer.o: src/render/Renderer.cpp.o
 .PHONY : src/render/Renderer.o
@@ -473,22 +499,24 @@ help:
 	@echo "... gtest_main"
 	@echo "... rvc_core"
 	@echo "... rvc_simulator"
-	@echo "... rvc_tests"
+	@echo "... test_dispatcher"
+	@echo "... test_grid"
+	@echo "... test_rvcstate"
 	@echo "... src/command/CommandDispatcher.o"
 	@echo "... src/command/CommandDispatcher.i"
 	@echo "... src/command/CommandDispatcher.s"
+	@echo "... src/command/CommandHandlers.o"
+	@echo "... src/command/CommandHandlers.i"
+	@echo "... src/command/CommandHandlers.s"
 	@echo "... src/demo/Demo.o"
 	@echo "... src/demo/Demo.i"
 	@echo "... src/demo/Demo.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/network/Session.o"
-	@echo "... src/network/Session.i"
-	@echo "... src/network/Session.s"
-	@echo "... src/network/TcpServer.o"
-	@echo "... src/network/TcpServer.i"
-	@echo "... src/network/TcpServer.s"
+	@echo "... src/network/UdpServer.o"
+	@echo "... src/network/UdpServer.i"
+	@echo "... src/network/UdpServer.s"
 	@echo "... src/render/Renderer.o"
 	@echo "... src/render/Renderer.i"
 	@echo "... src/render/Renderer.s"

@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o"
   "CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o.d"
+  "CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.o"
+  "CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.o.d"
   "CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o"
   "CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o.d"
   "CMakeFiles/rvc_core.dir/src/world/Grid.cpp.o"

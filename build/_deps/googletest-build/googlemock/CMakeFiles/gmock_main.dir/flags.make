@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googlemock/include -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googlemock -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest/include -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest
+CXX_INCLUDES = -isystem /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googlemock/include -isystem /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googlemock -isystem /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest/include -isystem /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest
 
 CXX_FLAGS = -g -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
 

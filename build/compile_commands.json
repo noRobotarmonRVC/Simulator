@@ -1,98 +1,92 @@
 [
 {
-  "directory": "/mnt/c/Users/wan2t/OOADProject/Simulator/build",
-  "command": "/usr/bin/c++  -I/mnt/c/Users/wan2t/OOADProject/Simulator/src -g -std=gnu++17 -o CMakeFiles/rvc_core.dir/src/world/Grid.cpp.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/src/world/Grid.cpp",
-  "file": "/mnt/c/Users/wan2t/OOADProject/Simulator/src/world/Grid.cpp",
+  "directory": "/home/wan/OOAD/Simulator/Simulator/build",
+  "command": "/usr/bin/c++  -I/home/wan/OOAD/Simulator/Simulator/src -g -std=gnu++17 -o CMakeFiles/rvc_core.dir/src/world/Grid.cpp.o -c /home/wan/OOAD/Simulator/Simulator/src/world/Grid.cpp",
+  "file": "/home/wan/OOAD/Simulator/Simulator/src/world/Grid.cpp",
   "output": "CMakeFiles/rvc_core.dir/src/world/Grid.cpp.o"
 },
 {
-  "directory": "/mnt/c/Users/wan2t/OOADProject/Simulator/build",
-  "command": "/usr/bin/c++  -I/mnt/c/Users/wan2t/OOADProject/Simulator/src -g -std=gnu++17 -o CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/src/world/RvcState.cpp",
-  "file": "/mnt/c/Users/wan2t/OOADProject/Simulator/src/world/RvcState.cpp",
+  "directory": "/home/wan/OOAD/Simulator/Simulator/build",
+  "command": "/usr/bin/c++  -I/home/wan/OOAD/Simulator/Simulator/src -g -std=gnu++17 -o CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.o -c /home/wan/OOAD/Simulator/Simulator/src/world/RvcState.cpp",
+  "file": "/home/wan/OOAD/Simulator/Simulator/src/world/RvcState.cpp",
   "output": "CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.o"
 },
 {
-  "directory": "/mnt/c/Users/wan2t/OOADProject/Simulator/build",
-  "command": "/usr/bin/c++  -I/mnt/c/Users/wan2t/OOADProject/Simulator/src -g -std=gnu++17 -o CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/src/command/CommandDispatcher.cpp",
-  "file": "/mnt/c/Users/wan2t/OOADProject/Simulator/src/command/CommandDispatcher.cpp",
+  "directory": "/home/wan/OOAD/Simulator/Simulator/build",
+  "command": "/usr/bin/c++  -I/home/wan/OOAD/Simulator/Simulator/src -g -std=gnu++17 -o CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.o -c /home/wan/OOAD/Simulator/Simulator/src/command/CommandHandlers.cpp",
+  "file": "/home/wan/OOAD/Simulator/Simulator/src/command/CommandHandlers.cpp",
+  "output": "CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.o"
+},
+{
+  "directory": "/home/wan/OOAD/Simulator/Simulator/build",
+  "command": "/usr/bin/c++  -I/home/wan/OOAD/Simulator/Simulator/src -g -std=gnu++17 -o CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o -c /home/wan/OOAD/Simulator/Simulator/src/command/CommandDispatcher.cpp",
+  "file": "/home/wan/OOAD/Simulator/Simulator/src/command/CommandDispatcher.cpp",
   "output": "CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o"
 },
 {
-  "directory": "/mnt/c/Users/wan2t/OOADProject/Simulator/build",
-  "command": "/usr/bin/c++  -I/mnt/c/Users/wan2t/OOADProject/Simulator/src -g -std=gnu++17 -o CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/src/render/Renderer.cpp",
-  "file": "/mnt/c/Users/wan2t/OOADProject/Simulator/src/render/Renderer.cpp",
+  "directory": "/home/wan/OOAD/Simulator/Simulator/build",
+  "command": "/usr/bin/c++  -I/home/wan/OOAD/Simulator/Simulator/src -g -std=gnu++17 -o CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o -c /home/wan/OOAD/Simulator/Simulator/src/render/Renderer.cpp",
+  "file": "/home/wan/OOAD/Simulator/Simulator/src/render/Renderer.cpp",
   "output": "CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o"
 },
 {
-  "directory": "/mnt/c/Users/wan2t/OOADProject/Simulator/build",
-  "command": "/usr/bin/c++  -I/mnt/c/Users/wan2t/OOADProject/Simulator/src -g -std=gnu++17 -o CMakeFiles/rvc_simulator.dir/src/main.cpp.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/src/main.cpp",
-  "file": "/mnt/c/Users/wan2t/OOADProject/Simulator/src/main.cpp",
+  "directory": "/home/wan/OOAD/Simulator/Simulator/build",
+  "command": "/usr/bin/c++  -I/home/wan/OOAD/Simulator/Simulator/src -g -std=gnu++17 -o CMakeFiles/rvc_simulator.dir/src/main.cpp.o -c /home/wan/OOAD/Simulator/Simulator/src/main.cpp",
+  "file": "/home/wan/OOAD/Simulator/Simulator/src/main.cpp",
   "output": "CMakeFiles/rvc_simulator.dir/src/main.cpp.o"
 },
 {
-  "directory": "/mnt/c/Users/wan2t/OOADProject/Simulator/build",
-  "command": "/usr/bin/c++  -I/mnt/c/Users/wan2t/OOADProject/Simulator/src -g -std=gnu++17 -o CMakeFiles/rvc_simulator.dir/src/demo/Demo.cpp.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/src/demo/Demo.cpp",
-  "file": "/mnt/c/Users/wan2t/OOADProject/Simulator/src/demo/Demo.cpp",
+  "directory": "/home/wan/OOAD/Simulator/Simulator/build",
+  "command": "/usr/bin/c++  -I/home/wan/OOAD/Simulator/Simulator/src -g -std=gnu++17 -o CMakeFiles/rvc_simulator.dir/src/demo/Demo.cpp.o -c /home/wan/OOAD/Simulator/Simulator/src/demo/Demo.cpp",
+  "file": "/home/wan/OOAD/Simulator/Simulator/src/demo/Demo.cpp",
   "output": "CMakeFiles/rvc_simulator.dir/src/demo/Demo.cpp.o"
 },
 {
-  "directory": "/mnt/c/Users/wan2t/OOADProject/Simulator/build",
-  "command": "/usr/bin/c++  -I/mnt/c/Users/wan2t/OOADProject/Simulator/src -g -std=gnu++17 -o CMakeFiles/rvc_simulator.dir/src/network/Session.cpp.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/src/network/Session.cpp",
-  "file": "/mnt/c/Users/wan2t/OOADProject/Simulator/src/network/Session.cpp",
-  "output": "CMakeFiles/rvc_simulator.dir/src/network/Session.cpp.o"
+  "directory": "/home/wan/OOAD/Simulator/Simulator/build",
+  "command": "/usr/bin/c++  -I/home/wan/OOAD/Simulator/Simulator/src -g -std=gnu++17 -o CMakeFiles/rvc_simulator.dir/src/network/UdpServer.cpp.o -c /home/wan/OOAD/Simulator/Simulator/src/network/UdpServer.cpp",
+  "file": "/home/wan/OOAD/Simulator/Simulator/src/network/UdpServer.cpp",
+  "output": "CMakeFiles/rvc_simulator.dir/src/network/UdpServer.cpp.o"
 },
 {
-  "directory": "/mnt/c/Users/wan2t/OOADProject/Simulator/build",
-  "command": "/usr/bin/c++  -I/mnt/c/Users/wan2t/OOADProject/Simulator/src -g -std=gnu++17 -o CMakeFiles/rvc_simulator.dir/src/network/TcpServer.cpp.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/src/network/TcpServer.cpp",
-  "file": "/mnt/c/Users/wan2t/OOADProject/Simulator/src/network/TcpServer.cpp",
-  "output": "CMakeFiles/rvc_simulator.dir/src/network/TcpServer.cpp.o"
+  "directory": "/home/wan/OOAD/Simulator/Simulator/build/tests",
+  "command": "/usr/bin/c++  -I/home/wan/OOAD/Simulator/Simulator/src -isystem /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest/include -isystem /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest -g -std=gnu++17 -o CMakeFiles/test_grid.dir/test_grid.cpp.o -c /home/wan/OOAD/Simulator/Simulator/tests/test_grid.cpp",
+  "file": "/home/wan/OOAD/Simulator/Simulator/tests/test_grid.cpp",
+  "output": "tests/CMakeFiles/test_grid.dir/test_grid.cpp.o"
 },
 {
-  "directory": "/mnt/c/Users/wan2t/OOADProject/Simulator/build/tests",
-  "command": "/usr/bin/c++  -I/mnt/c/Users/wan2t/OOADProject/Simulator/src -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest/include -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest -g -std=gnu++17 -o CMakeFiles/rvc_tests.dir/test_grid.cpp.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/tests/test_grid.cpp",
-  "file": "/mnt/c/Users/wan2t/OOADProject/Simulator/tests/test_grid.cpp",
-  "output": "tests/CMakeFiles/rvc_tests.dir/test_grid.cpp.o"
+  "directory": "/home/wan/OOAD/Simulator/Simulator/build/tests",
+  "command": "/usr/bin/c++  -I/home/wan/OOAD/Simulator/Simulator/src -isystem /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest/include -isystem /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest -g -std=gnu++17 -o CMakeFiles/test_rvcstate.dir/test_rvcstate.cpp.o -c /home/wan/OOAD/Simulator/Simulator/tests/test_rvcstate.cpp",
+  "file": "/home/wan/OOAD/Simulator/Simulator/tests/test_rvcstate.cpp",
+  "output": "tests/CMakeFiles/test_rvcstate.dir/test_rvcstate.cpp.o"
 },
 {
-  "directory": "/mnt/c/Users/wan2t/OOADProject/Simulator/build/tests",
-  "command": "/usr/bin/c++  -I/mnt/c/Users/wan2t/OOADProject/Simulator/src -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest/include -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest -g -std=gnu++17 -o CMakeFiles/rvc_tests.dir/test_rvc_state.cpp.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/tests/test_rvc_state.cpp",
-  "file": "/mnt/c/Users/wan2t/OOADProject/Simulator/tests/test_rvc_state.cpp",
-  "output": "tests/CMakeFiles/rvc_tests.dir/test_rvc_state.cpp.o"
+  "directory": "/home/wan/OOAD/Simulator/Simulator/build/tests",
+  "command": "/usr/bin/c++  -I/home/wan/OOAD/Simulator/Simulator/src -isystem /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest/include -isystem /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest -g -std=gnu++17 -o CMakeFiles/test_dispatcher.dir/test_dispatcher.cpp.o -c /home/wan/OOAD/Simulator/Simulator/tests/test_dispatcher.cpp",
+  "file": "/home/wan/OOAD/Simulator/Simulator/tests/test_dispatcher.cpp",
+  "output": "tests/CMakeFiles/test_dispatcher.dir/test_dispatcher.cpp.o"
 },
 {
-  "directory": "/mnt/c/Users/wan2t/OOADProject/Simulator/build/tests",
-  "command": "/usr/bin/c++  -I/mnt/c/Users/wan2t/OOADProject/Simulator/src -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest/include -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest -g -std=gnu++17 -o CMakeFiles/rvc_tests.dir/test_command_dispatcher.cpp.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/tests/test_command_dispatcher.cpp",
-  "file": "/mnt/c/Users/wan2t/OOADProject/Simulator/tests/test_command_dispatcher.cpp",
-  "output": "tests/CMakeFiles/rvc_tests.dir/test_command_dispatcher.cpp.o"
-},
-{
-  "directory": "/mnt/c/Users/wan2t/OOADProject/Simulator/build/tests",
-  "command": "/usr/bin/c++  -I/mnt/c/Users/wan2t/OOADProject/Simulator/src -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest/include -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest -g -std=gnu++17 -o CMakeFiles/rvc_tests.dir/test_renderer.cpp.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/tests/test_renderer.cpp",
-  "file": "/mnt/c/Users/wan2t/OOADProject/Simulator/tests/test_renderer.cpp",
-  "output": "tests/CMakeFiles/rvc_tests.dir/test_renderer.cpp.o"
-},
-{
-  "directory": "/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-build/googlemock",
-  "command": "/usr/bin/c++  -I/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googlemock/include -I/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googlemock -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest/include -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest -g -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
-  "file": "/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "directory": "/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/c++  -I/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googlemock/include -I/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googlemock -isystem /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest/include -isystem /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest -g -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "file": "/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
   "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
 },
 {
-  "directory": "/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-build/googlemock",
-  "command": "/usr/bin/c++  -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googlemock/include -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googlemock -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest/include -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest -g -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
-  "file": "/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "directory": "/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/c++  -isystem /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googlemock/include -isystem /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googlemock -isystem /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest/include -isystem /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest -g -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "file": "/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
   "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
 },
 {
-  "directory": "/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-build/googletest",
-  "command": "/usr/bin/c++  -I/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest/include -I/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest -g -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest/src/gtest-all.cc",
-  "file": "/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "directory": "/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/c++  -I/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest/include -I/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest -g -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "file": "/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest/src/gtest-all.cc",
   "output": "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
 },
 {
-  "directory": "/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-build/googletest",
-  "command": "/usr/bin/c++  -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest/include -isystem /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest -g -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest/src/gtest_main.cc",
-  "file": "/mnt/c/Users/wan2t/OOADProject/Simulator/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "directory": "/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/c++  -isystem /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest/include -isystem /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest -g -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "file": "/home/wan/OOAD/Simulator/Simulator/build/_deps/googletest-src/googletest/src/gtest_main.cc",
   "output": "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
 }
 ]

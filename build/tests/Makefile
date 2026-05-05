@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/wan2t/OOADProject/Simulator
+CMAKE_SOURCE_DIR = /home/wan/OOAD/Simulator/Simulator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/wan2t/OOADProject/Simulator/build
+CMAKE_BINARY_DIR = /home/wan/OOAD/Simulator/Simulator/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,14 +142,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/wan2t/OOADProject/Simulator/build/CMakeFiles /mnt/c/Users/wan2t/OOADProject/Simulator/build/tests//CMakeFiles/progress.marks
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/wan2t/OOADProject/Simulator/build/CMakeFiles 0
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/wan/OOAD/Simulator/Simulator/build/CMakeFiles /home/wan/OOAD/Simulator/Simulator/build/tests//CMakeFiles/progress.marks
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wan/OOAD/Simulator/Simulator/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/clean
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -158,63 +158,91 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-tests/CMakeFiles/rvc_tests.dir/rule:
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/rvc_tests.dir/rule
-.PHONY : tests/CMakeFiles/rvc_tests.dir/rule
+tests/CMakeFiles/test_grid.dir/rule:
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_grid.dir/rule
+.PHONY : tests/CMakeFiles/test_grid.dir/rule
 
 # Convenience name for target.
-rvc_tests: tests/CMakeFiles/rvc_tests.dir/rule
-.PHONY : rvc_tests
+test_grid: tests/CMakeFiles/test_grid.dir/rule
+.PHONY : test_grid
 
 # fast build rule for target.
-rvc_tests/fast:
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/rvc_tests.dir/build.make tests/CMakeFiles/rvc_tests.dir/build
-.PHONY : rvc_tests/fast
+test_grid/fast:
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_grid.dir/build.make tests/CMakeFiles/test_grid.dir/build
+.PHONY : test_grid/fast
 
-test_command_dispatcher.o: test_command_dispatcher.cpp.o
-.PHONY : test_command_dispatcher.o
+# Convenience name for target.
+tests/CMakeFiles/test_rvcstate.dir/rule:
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_rvcstate.dir/rule
+.PHONY : tests/CMakeFiles/test_rvcstate.dir/rule
+
+# Convenience name for target.
+test_rvcstate: tests/CMakeFiles/test_rvcstate.dir/rule
+.PHONY : test_rvcstate
+
+# fast build rule for target.
+test_rvcstate/fast:
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_rvcstate.dir/build.make tests/CMakeFiles/test_rvcstate.dir/build
+.PHONY : test_rvcstate/fast
+
+# Convenience name for target.
+tests/CMakeFiles/test_dispatcher.dir/rule:
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_dispatcher.dir/rule
+.PHONY : tests/CMakeFiles/test_dispatcher.dir/rule
+
+# Convenience name for target.
+test_dispatcher: tests/CMakeFiles/test_dispatcher.dir/rule
+.PHONY : test_dispatcher
+
+# fast build rule for target.
+test_dispatcher/fast:
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_dispatcher.dir/build.make tests/CMakeFiles/test_dispatcher.dir/build
+.PHONY : test_dispatcher/fast
+
+test_dispatcher.o: test_dispatcher.cpp.o
+.PHONY : test_dispatcher.o
 
 # target to build an object file
-test_command_dispatcher.cpp.o:
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/rvc_tests.dir/build.make tests/CMakeFiles/rvc_tests.dir/test_command_dispatcher.cpp.o
-.PHONY : test_command_dispatcher.cpp.o
+test_dispatcher.cpp.o:
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_dispatcher.dir/build.make tests/CMakeFiles/test_dispatcher.dir/test_dispatcher.cpp.o
+.PHONY : test_dispatcher.cpp.o
 
-test_command_dispatcher.i: test_command_dispatcher.cpp.i
-.PHONY : test_command_dispatcher.i
+test_dispatcher.i: test_dispatcher.cpp.i
+.PHONY : test_dispatcher.i
 
 # target to preprocess a source file
-test_command_dispatcher.cpp.i:
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/rvc_tests.dir/build.make tests/CMakeFiles/rvc_tests.dir/test_command_dispatcher.cpp.i
-.PHONY : test_command_dispatcher.cpp.i
+test_dispatcher.cpp.i:
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_dispatcher.dir/build.make tests/CMakeFiles/test_dispatcher.dir/test_dispatcher.cpp.i
+.PHONY : test_dispatcher.cpp.i
 
-test_command_dispatcher.s: test_command_dispatcher.cpp.s
-.PHONY : test_command_dispatcher.s
+test_dispatcher.s: test_dispatcher.cpp.s
+.PHONY : test_dispatcher.s
 
 # target to generate assembly for a file
-test_command_dispatcher.cpp.s:
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/rvc_tests.dir/build.make tests/CMakeFiles/rvc_tests.dir/test_command_dispatcher.cpp.s
-.PHONY : test_command_dispatcher.cpp.s
+test_dispatcher.cpp.s:
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_dispatcher.dir/build.make tests/CMakeFiles/test_dispatcher.dir/test_dispatcher.cpp.s
+.PHONY : test_dispatcher.cpp.s
 
 test_grid.o: test_grid.cpp.o
 .PHONY : test_grid.o
 
 # target to build an object file
 test_grid.cpp.o:
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/rvc_tests.dir/build.make tests/CMakeFiles/rvc_tests.dir/test_grid.cpp.o
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_grid.dir/build.make tests/CMakeFiles/test_grid.dir/test_grid.cpp.o
 .PHONY : test_grid.cpp.o
 
 test_grid.i: test_grid.cpp.i
@@ -222,7 +250,7 @@ test_grid.i: test_grid.cpp.i
 
 # target to preprocess a source file
 test_grid.cpp.i:
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/rvc_tests.dir/build.make tests/CMakeFiles/rvc_tests.dir/test_grid.cpp.i
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_grid.dir/build.make tests/CMakeFiles/test_grid.dir/test_grid.cpp.i
 .PHONY : test_grid.cpp.i
 
 test_grid.s: test_grid.cpp.s
@@ -230,56 +258,32 @@ test_grid.s: test_grid.cpp.s
 
 # target to generate assembly for a file
 test_grid.cpp.s:
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/rvc_tests.dir/build.make tests/CMakeFiles/rvc_tests.dir/test_grid.cpp.s
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_grid.dir/build.make tests/CMakeFiles/test_grid.dir/test_grid.cpp.s
 .PHONY : test_grid.cpp.s
 
-test_renderer.o: test_renderer.cpp.o
-.PHONY : test_renderer.o
+test_rvcstate.o: test_rvcstate.cpp.o
+.PHONY : test_rvcstate.o
 
 # target to build an object file
-test_renderer.cpp.o:
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/rvc_tests.dir/build.make tests/CMakeFiles/rvc_tests.dir/test_renderer.cpp.o
-.PHONY : test_renderer.cpp.o
+test_rvcstate.cpp.o:
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_rvcstate.dir/build.make tests/CMakeFiles/test_rvcstate.dir/test_rvcstate.cpp.o
+.PHONY : test_rvcstate.cpp.o
 
-test_renderer.i: test_renderer.cpp.i
-.PHONY : test_renderer.i
-
-# target to preprocess a source file
-test_renderer.cpp.i:
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/rvc_tests.dir/build.make tests/CMakeFiles/rvc_tests.dir/test_renderer.cpp.i
-.PHONY : test_renderer.cpp.i
-
-test_renderer.s: test_renderer.cpp.s
-.PHONY : test_renderer.s
-
-# target to generate assembly for a file
-test_renderer.cpp.s:
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/rvc_tests.dir/build.make tests/CMakeFiles/rvc_tests.dir/test_renderer.cpp.s
-.PHONY : test_renderer.cpp.s
-
-test_rvc_state.o: test_rvc_state.cpp.o
-.PHONY : test_rvc_state.o
-
-# target to build an object file
-test_rvc_state.cpp.o:
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/rvc_tests.dir/build.make tests/CMakeFiles/rvc_tests.dir/test_rvc_state.cpp.o
-.PHONY : test_rvc_state.cpp.o
-
-test_rvc_state.i: test_rvc_state.cpp.i
-.PHONY : test_rvc_state.i
+test_rvcstate.i: test_rvcstate.cpp.i
+.PHONY : test_rvcstate.i
 
 # target to preprocess a source file
-test_rvc_state.cpp.i:
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/rvc_tests.dir/build.make tests/CMakeFiles/rvc_tests.dir/test_rvc_state.cpp.i
-.PHONY : test_rvc_state.cpp.i
+test_rvcstate.cpp.i:
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_rvcstate.dir/build.make tests/CMakeFiles/test_rvcstate.dir/test_rvcstate.cpp.i
+.PHONY : test_rvcstate.cpp.i
 
-test_rvc_state.s: test_rvc_state.cpp.s
-.PHONY : test_rvc_state.s
+test_rvcstate.s: test_rvcstate.cpp.s
+.PHONY : test_rvcstate.s
 
 # target to generate assembly for a file
-test_rvc_state.cpp.s:
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/rvc_tests.dir/build.make tests/CMakeFiles/rvc_tests.dir/test_rvc_state.cpp.s
-.PHONY : test_rvc_state.cpp.s
+test_rvcstate.cpp.s:
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_rvcstate.dir/build.make tests/CMakeFiles/test_rvcstate.dir/test_rvcstate.cpp.s
+.PHONY : test_rvcstate.cpp.s
 
 # Help Target
 help:
@@ -294,19 +298,18 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... rvc_tests"
-	@echo "... test_command_dispatcher.o"
-	@echo "... test_command_dispatcher.i"
-	@echo "... test_command_dispatcher.s"
+	@echo "... test_dispatcher"
+	@echo "... test_grid"
+	@echo "... test_rvcstate"
+	@echo "... test_dispatcher.o"
+	@echo "... test_dispatcher.i"
+	@echo "... test_dispatcher.s"
 	@echo "... test_grid.o"
 	@echo "... test_grid.i"
 	@echo "... test_grid.s"
-	@echo "... test_renderer.o"
-	@echo "... test_renderer.i"
-	@echo "... test_renderer.s"
-	@echo "... test_rvc_state.o"
-	@echo "... test_rvc_state.i"
-	@echo "... test_rvc_state.s"
+	@echo "... test_rvcstate.o"
+	@echo "... test_rvcstate.i"
+	@echo "... test_rvcstate.s"
 .PHONY : help
 
 
@@ -318,6 +321,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

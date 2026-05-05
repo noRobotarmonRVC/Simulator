@@ -3,10 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/rvc_simulator.dir/src/demo/Demo.cpp.o.d"
   "CMakeFiles/rvc_simulator.dir/src/main.cpp.o"
   "CMakeFiles/rvc_simulator.dir/src/main.cpp.o.d"
-  "CMakeFiles/rvc_simulator.dir/src/network/Session.cpp.o"
-  "CMakeFiles/rvc_simulator.dir/src/network/Session.cpp.o.d"
-  "CMakeFiles/rvc_simulator.dir/src/network/TcpServer.cpp.o"
-  "CMakeFiles/rvc_simulator.dir/src/network/TcpServer.cpp.o.d"
+  "CMakeFiles/rvc_simulator.dir/src/network/UdpServer.cpp.o"
+  "CMakeFiles/rvc_simulator.dir/src/network/UdpServer.cpp.o.d"
   "rvc_simulator"
   "rvc_simulator.pdb"
 )

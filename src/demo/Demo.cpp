@@ -1,112 +1,46 @@
 #include "demo/Demo.hpp"
-
-#include <array>
 #include <chrono>
-#include <cstdlib>
-#include <iostream>
-#include <sstream>
 #include <string>
 #include <thread>
 
-// ── Parse helpers ─────────────────────────────────────────────────────────────
+Demo::Demo(CommandDispatcher& dispatcher) : m_dispatcher(dispatcher) {}
 
-/// Parse "OBSTACLE f l r b" → array {front, left, right, back}
-static std::array<int, 4> parseObstacle(const std::string& resp) {
-    std::array<int, 4> obs{1, 1, 1, 1};  // default: blocked everywhere
-    std::istringstream ss{resp};
-    std::string tag;
-    ss >> tag;  // "OBSTACLE"
-    for (int i = 0; i < 4; ++i) {
-        ss >> obs[static_cast<std::size_t>(i)];
-    }
-    return obs;
+std::string Demo::send(const std::string& cmd) {
+    return m_dispatcher.dispatch(cmd);
 }
 
-/// Parse "DUST x" → x
-static int parseDust(const std::string& resp) {
-    std::istringstream ss{resp};
-    std::string tag;
-    int val = 0;
-    ss >> tag >> val;
-    return val;
-}
+void Demo::run(int steps) {
+    // Turn cleaner on at start
+    send("CLEANER_ON");
 
-// ── Demo loop ─────────────────────────────────────────────────────────────────
+    for (int i = 0; i < steps; ++i) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(150));
 
-void runDemo(Grid& grid, RvcState& /*state*/,
-             std::mutex& /*worldMutex*/, CommandDispatcher& dispatcher)
-{
-    static constexpr int  MAX_TICKS      = 500;
-    static constexpr auto TICK_INTERVAL  = std::chrono::milliseconds{200};
+        // Check dust at current position
+        send("FIND_DUST");
 
-    // Turn devices on
-    dispatcher.dispatch("CLEANER_ON");
+        // Check obstacles: OBSTACLE f l r b
+        std::string obs = send("FIND_OBSTACLE");
+        // obs = "OBSTACLE f l r b"
+        int f = 0, l = 0, r = 0, b = 0;
+        std::sscanf(obs.c_str(), "OBSTACLE %d %d %d %d", &f, &l, &r, &b);
 
-    int  stallCount  = 0;      // consecutive ticks without forward movement
-    bool turnedRight = false;  // alternate left/right when front is blocked
-
-    for (int tick = 0; tick < MAX_TICKS; ++tick) {
-        // ── 1. Check if cleaning is done ─────────────────────────────────
-        if (grid.dustCount() == 0) {
-            std::cout << "\n\033[32mAll dust collected! Demo complete.\033[0m\n"
-                      << std::flush;
-            break;
-        }
-
-        // ── 2. Sense obstacles ────────────────────────────────────────────
-        const auto obs = parseObstacle(dispatcher.dispatch("FIND_OBSTACLE"));
-        const int  front = obs[0];
-        const int  left  = obs[1];
-        const int  right = obs[2];
-        const int  back  = obs[3];
-
-        // ── 3. Navigate ───────────────────────────────────────────────────
-        if (front == 0) {
-            // Path ahead is clear — move forward
-            dispatcher.dispatch("MOVE_FORWARD");
-            stallCount = 0;
+        if (f == 0) {
+            // Front is clear — move forward
+            send("MOVE_FORWARD");
+        } else if (r == 0) {
+            // Turn right and move
+            send("ROTATE_RIGHT");
+            send("MOVE_FORWARD");
+        } else if (l == 0) {
+            // Turn left and move
+            send("ROTATE_LEFT");
+            send("MOVE_FORWARD");
         } else {
-            // Front blocked — choose a turn
-            ++stallCount;
-
-            if (left == 0 && right != 0) {
-                dispatcher.dispatch("ROTATE_LEFT");
-            } else if (right == 0 && left != 0) {
-                dispatcher.dispatch("ROTATE_RIGHT");
-            } else if (left == 0 && right == 0) {
-                // Both sides free — alternate to avoid infinite spin
-                if (turnedRight) {
-                    dispatcher.dispatch("ROTATE_LEFT");
-                    turnedRight = false;
-                } else {
-                    dispatcher.dispatch("ROTATE_RIGHT");
-                    turnedRight = true;
-                }
-            } else {
-                // All three directions blocked — back up if possible
-                if (back == 0) {
-                    dispatcher.dispatch("MOVE_BACKWARD");
-                } else {
-                    // Completely surrounded: stop cleaning, spin to escape
-                    dispatcher.dispatch("CLEANER_OFF");
-                    dispatcher.dispatch("ROTATE_RIGHT");
-                    dispatcher.dispatch("ROTATE_RIGHT");
-                    dispatcher.dispatch("CLEANER_ON");
-                }
-            }
+            // Trapped — rotate 180
+            send("ROTATE_RIGHT");
+            send("ROTATE_RIGHT");
+            send("MOVE_FORWARD");
         }
-
-        // ── 4. Sense dust, adjust cleaner power ──────────────────────────
-        const int dustHere = parseDust(dispatcher.dispatch("FIND_DUST"));
-        if (dustHere != 0) {
-            dispatcher.dispatch("BOOST_MODE");
-        } else {
-            dispatcher.dispatch("NORMAL_MODE");
-        }
-
-        // ── 5. Wait so the user can see the animation ─────────────────────
-        std::this_thread::sleep_for(TICK_INTERVAL);
     }
-
-    dispatcher.dispatch("CLEANER_OFF");
 }

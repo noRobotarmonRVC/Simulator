@@ -1,97 +1,19 @@
 #include "render/Renderer.hpp"
-
-#include <iostream>
+#include <chrono>
+#include <cstdio>
+#include <sstream>
+#include <string>
+#include <thread>
 
 // ANSI colour helpers
-static constexpr const char* RESET   = "\033[0m";
-static constexpr const char* CYAN    = "\033[36m";   // RVC
-static constexpr const char* YELLOW  = "\033[33m";   // Dust
-static constexpr const char* RED     = "\033[31m";   // Obstacle
-static constexpr const char* DARK    = "\033[90m";   // Wall
+static const char* RESET    = "\033[0m";
+static const char* CYAN     = "\033[36m";
+static const char* YELLOW   = "\033[33m";
+static const char* RED      = "\033[31m";
+static const char* DARK_GREY= "\033[90m";
 
-static char directionChar(Direction d) noexcept {
-    switch (d) {
-        case Direction::North: return '^';
-        case Direction::East:  return '>';
-        case Direction::South: return 'v';
-        case Direction::West:  return '<';
-    }
-    return '?';
-}
-
-static const char* directionName(Direction d) noexcept {
-    switch (d) {
-        case Direction::North: return "North";
-        case Direction::East:  return "East";
-        case Direction::South: return "South";
-        case Direction::West:  return "West";
-    }
-    return "?";
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-
-std::string Renderer::buildFrame(const Grid& grid, const RvcState& state) {
-    std::string out;
-    out.reserve(static_cast<std::size_t>(
-        (grid.width() * 10 + 2) * grid.height() + 256));
-
-    // ── Header ───────────────────────────────────────────────────────────────
-    out += "=== RVC Simulator ===\n";
-
-    // ── Grid ─────────────────────────────────────────────────────────────────
-    const Position rvcPos = state.position();
-    for (int y = 0; y < grid.height(); ++y) {
-        for (int x = 0; x < grid.width(); ++x) {
-            if (x == rvcPos.x && y == rvcPos.y) {
-                out += CYAN;
-                out += directionChar(state.direction());
-                out += RESET;
-                continue;
-            }
-            const CellType cell = grid.cellAt(x, y);
-            if (cell == CellType::Wall) {
-                out += DARK;
-                out += '#';
-                out += RESET;
-            } else if (cell == CellType::Obstacle) {
-                out += RED;
-                out += 'O';
-                out += RESET;
-            } else if (grid.hasDust(x, y)) {
-                out += YELLOW;
-                out += '.';
-                out += RESET;
-            } else {
-                out += ' ';
-            }
-        }
-        out += '\n';
-    }
-
-    // ── Status panel ─────────────────────────────────────────────────────────
-    out += '\n';
-    out += "Position : ("
-         + std::to_string(rvcPos.x) + ", "
-         + std::to_string(rvcPos.y) + ")\n";
-    out += std::string("Direction: ") + directionName(state.direction()) + '\n';
-    out += std::string("Cleaner  : ") + (state.isCleanerOn() ? "ON" : "OFF") + '\n';
-    out += std::string("Mode     : ") + (state.isBoostMode() ? "Boost"  : "Normal") + '\n';
-    out += std::string("Dust left: ") + std::to_string(grid.dustCount()) + '\n';
-
-    return out;
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-
-Renderer::Renderer(const Grid&  grid,
-                   const RvcState& state,
-                   std::mutex&  worldMutex,
-                   std::chrono::milliseconds refreshInterval)
-    : m_grid{grid}
-    , m_state{state}
-    , m_mutex{worldMutex}
-    , m_interval{refreshInterval}
+Renderer::Renderer(Grid& grid, RvcState& state, std::mutex& mutex)
+    : m_grid(grid), m_state(state), m_mutex(mutex)
 {}
 
 Renderer::~Renderer() {
@@ -100,28 +22,80 @@ Renderer::~Renderer() {
 
 void Renderer::start() {
     m_running = true;
-    m_thread  = std::thread(&Renderer::renderLoop, this);
+    m_thread = std::thread(&Renderer::runLoop, this);
 }
 
 void Renderer::stop() {
     m_running = false;
-    if (m_thread.joinable()) {
-        m_thread.join();
+    if (m_thread.joinable()) m_thread.join();
+}
+
+void Renderer::runLoop() {
+    while (m_running) {
+        std::string frame = buildFrame();
+        // cursor home + clear screen
+        std::fputs("\033[H\033[2J", stdout);
+        std::fputs(frame.c_str(), stdout);
+        std::fflush(stdout);
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
 }
 
-void Renderer::renderLoop() {
-    while (m_running) {
-        // Snapshot under lock
-        std::string frame;
-        {
-            std::lock_guard<std::mutex> lock(m_mutex);
-            frame = buildFrame(m_grid, m_state);
-        }
+std::string Renderer::buildFrame() const {
+    // Snapshot under lock
+    Grid      gridSnap  = [&]{ std::lock_guard<std::mutex> lk(m_mutex); return m_grid; }();
+    RvcState  stateSnap = [&]{ std::lock_guard<std::mutex> lk(m_mutex); return m_state; }();
 
-        // Move cursor to top-left and overwrite; no flicker without clear
-        std::cout << "\033[H" << frame << std::flush;
+    auto [rx, ry] = stateSnap.position();
+    Direction dir = stateSnap.direction();
 
-        std::this_thread::sleep_for(m_interval);
+    char rvcChar = '?';
+    switch (dir) {
+        case Direction::North: rvcChar = '^'; break;
+        case Direction::East:  rvcChar = '>'; break;
+        case Direction::South: rvcChar = 'v'; break;
+        case Direction::West:  rvcChar = '<'; break;
     }
+
+    std::ostringstream oss;
+    oss << "=== RVC Simulator ===\n";
+
+    for (int y = 0; y < gridSnap.height(); ++y) {
+        for (int x = 0; x < gridSnap.width(); ++x) {
+            if (x == rx && y == ry) {
+                oss << CYAN << rvcChar << RESET;
+            } else {
+                CellType ct = gridSnap.cellAt(x, y);
+                if (ct == CellType::Wall) {
+                    oss << DARK_GREY << '#' << RESET;
+                } else if (ct == CellType::Obstacle) {
+                    oss << RED << 'O' << RESET;
+                } else if (gridSnap.hasDust(x, y)) {
+                    oss << YELLOW << '.' << RESET;
+                } else {
+                    oss << ' ';
+                }
+            }
+        }
+        oss << '\n';
+    }
+
+    oss << '\n';
+    oss << "Position : (" << rx << ", " << ry << ")\n";
+
+    const char* dirName = "?";
+    switch (dir) {
+        case Direction::North: dirName = "North"; break;
+        case Direction::East:  dirName = "East";  break;
+        case Direction::South: dirName = "South"; break;
+        case Direction::West:  dirName = "West";  break;
+    }
+    oss << "Direction: " << dirName << "\n";
+    oss << "Cleaner  : " << (stateSnap.isCleanerOn() ? "ON" : "OFF");
+    if (stateSnap.isCleanerOn())
+        oss << (stateSnap.isBoostMode() ? "  [BOOST]" : "  [NORMAL]");
+    oss << "\n";
+    oss << "Dust left: " << gridSnap.dustCount() << "\n";
+
+    return oss.str();
 }

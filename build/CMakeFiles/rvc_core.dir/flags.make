@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/mnt/c/Users/wan2t/OOADProject/Simulator/src
+CXX_INCLUDES = -I/home/wan/OOAD/Simulator/Simulator/src
 
 CXX_FLAGS = -g -std=gnu++17
 

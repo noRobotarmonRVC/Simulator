@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/wan2t/OOADProject/Simulator
+CMAKE_SOURCE_DIR = /home/wan/OOAD/Simulator/Simulator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/wan2t/OOADProject/Simulator/build
+CMAKE_BINARY_DIR = /home/wan/OOAD/Simulator/Simulator/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/rvc_core.dir/depend.make
@@ -70,65 +70,80 @@ include CMakeFiles/rvc_core.dir/progress.make
 include CMakeFiles/rvc_core.dir/flags.make
 
 CMakeFiles/rvc_core.dir/src/world/Grid.cpp.o: CMakeFiles/rvc_core.dir/flags.make
-CMakeFiles/rvc_core.dir/src/world/Grid.cpp.o: /mnt/c/Users/wan2t/OOADProject/Simulator/src/world/Grid.cpp
+CMakeFiles/rvc_core.dir/src/world/Grid.cpp.o: /home/wan/OOAD/Simulator/Simulator/src/world/Grid.cpp
 CMakeFiles/rvc_core.dir/src/world/Grid.cpp.o: CMakeFiles/rvc_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/wan2t/OOADProject/Simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/rvc_core.dir/src/world/Grid.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rvc_core.dir/src/world/Grid.cpp.o -MF CMakeFiles/rvc_core.dir/src/world/Grid.cpp.o.d -o CMakeFiles/rvc_core.dir/src/world/Grid.cpp.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/src/world/Grid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wan/OOAD/Simulator/Simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/rvc_core.dir/src/world/Grid.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rvc_core.dir/src/world/Grid.cpp.o -MF CMakeFiles/rvc_core.dir/src/world/Grid.cpp.o.d -o CMakeFiles/rvc_core.dir/src/world/Grid.cpp.o -c /home/wan/OOAD/Simulator/Simulator/src/world/Grid.cpp
 
 CMakeFiles/rvc_core.dir/src/world/Grid.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/rvc_core.dir/src/world/Grid.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/wan2t/OOADProject/Simulator/src/world/Grid.cpp > CMakeFiles/rvc_core.dir/src/world/Grid.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wan/OOAD/Simulator/Simulator/src/world/Grid.cpp > CMakeFiles/rvc_core.dir/src/world/Grid.cpp.i
 
 CMakeFiles/rvc_core.dir/src/world/Grid.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/rvc_core.dir/src/world/Grid.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/wan2t/OOADProject/Simulator/src/world/Grid.cpp -o CMakeFiles/rvc_core.dir/src/world/Grid.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wan/OOAD/Simulator/Simulator/src/world/Grid.cpp -o CMakeFiles/rvc_core.dir/src/world/Grid.cpp.s
 
 CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.o: CMakeFiles/rvc_core.dir/flags.make
-CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.o: /mnt/c/Users/wan2t/OOADProject/Simulator/src/world/RvcState.cpp
+CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.o: /home/wan/OOAD/Simulator/Simulator/src/world/RvcState.cpp
 CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.o: CMakeFiles/rvc_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/wan2t/OOADProject/Simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.o -MF CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.o.d -o CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/src/world/RvcState.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wan/OOAD/Simulator/Simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.o -MF CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.o.d -o CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.o -c /home/wan/OOAD/Simulator/Simulator/src/world/RvcState.cpp
 
 CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/wan2t/OOADProject/Simulator/src/world/RvcState.cpp > CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wan/OOAD/Simulator/Simulator/src/world/RvcState.cpp > CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.i
 
 CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/wan2t/OOADProject/Simulator/src/world/RvcState.cpp -o CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wan/OOAD/Simulator/Simulator/src/world/RvcState.cpp -o CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.s
+
+CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.o: CMakeFiles/rvc_core.dir/flags.make
+CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.o: /home/wan/OOAD/Simulator/Simulator/src/command/CommandHandlers.cpp
+CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.o: CMakeFiles/rvc_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wan/OOAD/Simulator/Simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.o -MF CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.o.d -o CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.o -c /home/wan/OOAD/Simulator/Simulator/src/command/CommandHandlers.cpp
+
+CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wan/OOAD/Simulator/Simulator/src/command/CommandHandlers.cpp > CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.i
+
+CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wan/OOAD/Simulator/Simulator/src/command/CommandHandlers.cpp -o CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.s
 
 CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o: CMakeFiles/rvc_core.dir/flags.make
-CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o: /mnt/c/Users/wan2t/OOADProject/Simulator/src/command/CommandDispatcher.cpp
+CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o: /home/wan/OOAD/Simulator/Simulator/src/command/CommandDispatcher.cpp
 CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o: CMakeFiles/rvc_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/wan2t/OOADProject/Simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o -MF CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o.d -o CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/src/command/CommandDispatcher.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wan/OOAD/Simulator/Simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o -MF CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o.d -o CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o -c /home/wan/OOAD/Simulator/Simulator/src/command/CommandDispatcher.cpp
 
 CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/wan2t/OOADProject/Simulator/src/command/CommandDispatcher.cpp > CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wan/OOAD/Simulator/Simulator/src/command/CommandDispatcher.cpp > CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.i
 
 CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/wan2t/OOADProject/Simulator/src/command/CommandDispatcher.cpp -o CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wan/OOAD/Simulator/Simulator/src/command/CommandDispatcher.cpp -o CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.s
 
 CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o: CMakeFiles/rvc_core.dir/flags.make
-CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o: /mnt/c/Users/wan2t/OOADProject/Simulator/src/render/Renderer.cpp
+CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o: /home/wan/OOAD/Simulator/Simulator/src/render/Renderer.cpp
 CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o: CMakeFiles/rvc_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/wan2t/OOADProject/Simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o -MF CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o.d -o CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o -c /mnt/c/Users/wan2t/OOADProject/Simulator/src/render/Renderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wan/OOAD/Simulator/Simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o -MF CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o.d -o CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o -c /home/wan/OOAD/Simulator/Simulator/src/render/Renderer.cpp
 
 CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/wan2t/OOADProject/Simulator/src/render/Renderer.cpp > CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wan/OOAD/Simulator/Simulator/src/render/Renderer.cpp > CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.i
 
 CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/wan2t/OOADProject/Simulator/src/render/Renderer.cpp -o CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wan/OOAD/Simulator/Simulator/src/render/Renderer.cpp -o CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.s
 
 # Object files for target rvc_core
 rvc_core_OBJECTS = \
 "CMakeFiles/rvc_core.dir/src/world/Grid.cpp.o" \
 "CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.o" \
+"CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.o" \
 "CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o" \
 "CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o"
 
@@ -137,11 +152,12 @@ rvc_core_EXTERNAL_OBJECTS =
 
 librvc_core.a: CMakeFiles/rvc_core.dir/src/world/Grid.cpp.o
 librvc_core.a: CMakeFiles/rvc_core.dir/src/world/RvcState.cpp.o
+librvc_core.a: CMakeFiles/rvc_core.dir/src/command/CommandHandlers.cpp.o
 librvc_core.a: CMakeFiles/rvc_core.dir/src/command/CommandDispatcher.cpp.o
 librvc_core.a: CMakeFiles/rvc_core.dir/src/render/Renderer.cpp.o
 librvc_core.a: CMakeFiles/rvc_core.dir/build.make
 librvc_core.a: CMakeFiles/rvc_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Users/wan2t/OOADProject/Simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library librvc_core.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/wan/OOAD/Simulator/Simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library librvc_core.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/rvc_core.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rvc_core.dir/link.txt --verbose=$(VERBOSE)
 
@@ -154,6 +170,6 @@ CMakeFiles/rvc_core.dir/clean:
 .PHONY : CMakeFiles/rvc_core.dir/clean
 
 CMakeFiles/rvc_core.dir/depend:
-	cd /mnt/c/Users/wan2t/OOADProject/Simulator/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/wan2t/OOADProject/Simulator /mnt/c/Users/wan2t/OOADProject/Simulator /mnt/c/Users/wan2t/OOADProject/Simulator/build /mnt/c/Users/wan2t/OOADProject/Simulator/build /mnt/c/Users/wan2t/OOADProject/Simulator/build/CMakeFiles/rvc_core.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/wan/OOAD/Simulator/Simulator/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/wan/OOAD/Simulator/Simulator /home/wan/OOAD/Simulator/Simulator /home/wan/OOAD/Simulator/Simulator/build /home/wan/OOAD/Simulator/Simulator/build /home/wan/OOAD/Simulator/Simulator/build/CMakeFiles/rvc_core.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/rvc_core.dir/depend
 
