@@ -60,3 +60,9 @@ public:
     std::string execute(Grid& grid, RvcState& state) override;
     std::string verb() const override { return "NORMAL_MODE"; }
 };
+
+class StopMotionHandler final : public ICommandHandler {
+public:
+    std::string execute(Grid& grid, RvcState& state) override;
+    std::string verb() const override { return "STOP"; }
+};

@@ -22,27 +22,28 @@ std::string FindObstacleHandler::execute(Grid& grid, RvcState& state) {
            " " + std::to_string(r) + " " + std::to_string(b);
 }
 
-std::string MoveForwardHandler::execute(Grid& grid, RvcState& state) {
-    auto next = state.cellInFront();
-    if (!grid.isPassable(next.x, next.y)) return "BLOCKED";
-    state.setPosition(next);
+std::string MoveForwardHandler::execute(Grid& /*grid*/, RvcState& state) {
+    state.setMotion(Motion::Forward);
     return "OK";
 }
 
-std::string MoveBackwardHandler::execute(Grid& grid, RvcState& state) {
-    auto next = state.cellBehind();
-    if (!grid.isPassable(next.x, next.y)) return "BLOCKED";
-    state.setPosition(next);
+std::string MoveBackwardHandler::execute(Grid& /*grid*/, RvcState& state) {
+    state.setMotion(Motion::Backward);
     return "OK";
 }
 
 std::string RotateLeftHandler::execute(Grid& /*grid*/, RvcState& state) {
-    state.rotateLeft();
+    state.setMotion(Motion::RotateLeft);
     return "OK";
 }
 
 std::string RotateRightHandler::execute(Grid& /*grid*/, RvcState& state) {
-    state.rotateRight();
+    state.setMotion(Motion::RotateRight);
+    return "OK";
+}
+
+std::string StopMotionHandler::execute(Grid& /*grid*/, RvcState& state) {
+    state.setMotion(Motion::Idle);
     return "OK";
 }
 

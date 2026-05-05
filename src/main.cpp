@@ -38,10 +38,31 @@ static void registerAllHandlers(CommandDispatcher& d) {
     d.registerHandler(std::make_unique<MoveBackwardHandler>());
     d.registerHandler(std::make_unique<RotateLeftHandler>());
     d.registerHandler(std::make_unique<RotateRightHandler>());
+    d.registerHandler(std::make_unique<StopMotionHandler>());
     d.registerHandler(std::make_unique<CleanerOnHandler>());
     d.registerHandler(std::make_unique<CleanerOffHandler>());
     d.registerHandler(std::make_unique<BoostModeHandler>());
     d.registerHandler(std::make_unique<NormalModeHandler>());
+}
+
+static void motionTick(Grid& grid, RvcState& state) {
+    switch (state.motion()) {
+        case Motion::Forward: {
+            auto next = state.cellInFront();
+            if (grid.isPassable(next.x, next.y)) state.setPosition(next);
+            else                                  state.setMotion(Motion::Idle);
+            break;
+        }
+        case Motion::Backward: {
+            auto next = state.cellBehind();
+            if (grid.isPassable(next.x, next.y)) state.setPosition(next);
+            else                                  state.setMotion(Motion::Idle);
+            break;
+        }
+        case Motion::RotateLeft:  state.rotateLeft();  break;
+        case Motion::RotateRight: state.rotateRight(); break;
+        case Motion::Idle:                             break;
+    }
 }
 
 int main(int argc, char* argv[]) {
@@ -71,6 +92,14 @@ int main(int argc, char* argv[]) {
     Renderer renderer(grid, state, worldMutex);
     renderer.start();
 
+    std::thread motionThread([&]() {
+        while (g_running) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(200));
+            std::lock_guard<std::mutex> lock(worldMutex);
+            motionTick(grid, state);
+        }
+    });
+
     if (demoMode) {
         Demo demo(dispatcher);
         demo.run(300);
@@ -87,6 +116,8 @@ int main(int argc, char* argv[]) {
 
         server.stop();
     }
+
+    motionThread.join();
 
     renderer.stop();
     return 0;
