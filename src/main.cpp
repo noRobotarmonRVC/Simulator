@@ -12,6 +12,7 @@
 #include "network/TcpServer.hpp"
 #include "render/Renderer.hpp"
 #include "world/Grid.hpp"
+#include "world/MotionTick.hpp"
 #include "world/RvcState.hpp"
 
 // 20×10 ASCII room: # = wall, O = obstacle, . = dust, space = empty
@@ -49,25 +50,6 @@ static void registerAllHandlers(CommandDispatcher& d) {
     d.registerHandler(std::make_unique<NormalModeHandler>());
 }
 
-static void motionTick(Grid& grid, RvcState& state) {
-    switch (state.motion()) {
-        case Motion::Forward: {
-            auto next = state.cellInFront();
-            if (grid.isPassable(next.x, next.y)) state.setPosition(next);
-            else                                  state.setMotion(Motion::Idle);
-            break;
-        }
-        case Motion::Backward: {
-            auto next = state.cellBehind();
-            if (grid.isPassable(next.x, next.y)) state.setPosition(next);
-            else                                  state.setMotion(Motion::Idle);
-            break;
-        }
-        case Motion::RotateLeft:  state.rotateLeft();  break;
-        case Motion::RotateRight: state.rotateRight(); break;
-        case Motion::Idle:                             break;
-    }
-}
 
 int main(int argc, char* argv[]) {
     bool demoMode = false;
