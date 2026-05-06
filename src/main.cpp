@@ -9,7 +9,7 @@
 #include "command/CommandDispatcher.hpp"
 #include "command/CommandHandlers.hpp"
 #include "demo/Demo.hpp"
-#include "network/UdpServer.hpp"
+#include "network/TcpServer.hpp"
 #include "render/Renderer.hpp"
 #include "world/Grid.hpp"
 #include "world/RvcState.hpp"
@@ -109,9 +109,9 @@ int main(int argc, char* argv[]) {
         demo.run(300);
     } else {
         std::signal(SIGINT, sigHandler);
-        std::cout << "RVC Simulator listening on UDP port " << port << " (Ctrl+C to stop)\n";
+        std::cout << "RVC Simulator listening on TCP port " << port << " (Ctrl+C to stop)\n";
 
-        UdpServer server(dispatcher, port);
+        TcpServer server(dispatcher, port);
         server.start();
 
         while (g_running) {

@@ -22,7 +22,7 @@ target_link_libraries(rvc_core PUBLIC Threads::Threads)
 add_executable(rvc_simulator
     src/main.cpp
     src/demo/Demo.cpp
-    src/network/UdpServer.cpp
+    src/network/TcpServer.cpp
 )
 target_include_directories(rvc_simulator PRIVATE src)
 target_link_libraries(rvc_simulator PRIVATE rvc_core)
