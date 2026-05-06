@@ -1,45 +1,65 @@
 #include "world/RvcState.hpp"
 
-RvcState::RvcState(int startX, int startY, Direction dir)
-    : m_pos{startX, startY}
-    , m_dir{dir}
+RvcState::RvcState(int x, int y, Direction dir)
+    : m_pos{x, y}, m_dir(dir)
 {}
 
-void RvcState::rotateLeft() noexcept {
-    // N→W→S→E→N  ≡  (dir + 3) % 4
-    m_dir = static_cast<Direction>((static_cast<uint8_t>(m_dir) + 3U) % 4U);
+void RvcState::rotateLeft() {
+    switch (m_dir) {
+        case Direction::North: m_dir = Direction::West;  break;
+        case Direction::West:  m_dir = Direction::South; break;
+        case Direction::South: m_dir = Direction::East;  break;
+        case Direction::East:  m_dir = Direction::North; break;
+    }
 }
 
-void RvcState::rotateRight() noexcept {
-    // N→E→S→W→N  ≡  (dir + 1) % 4
-    m_dir = static_cast<Direction>((static_cast<uint8_t>(m_dir) + 1U) % 4U);
+void RvcState::rotateRight() {
+    switch (m_dir) {
+        case Direction::North: m_dir = Direction::East;  break;
+        case Direction::East:  m_dir = Direction::South; break;
+        case Direction::South: m_dir = Direction::West;  break;
+        case Direction::West:  m_dir = Direction::North; break;
+    }
 }
 
-// Direction offsets: {dx, dy}
-//   North(0): ( 0, -1)
-//   East (1): (+1,  0)
-//   South(2): ( 0, +1)
-//   West (3): (-1,  0)
-static constexpr int DX[4] = { 0, +1,  0, -1};
-static constexpr int DY[4] = {-1,  0, +1,  0};
-
-static Position offset(Position pos, Direction dir) noexcept {
-    auto d = static_cast<int>(dir);
-    return {pos.x + DX[d], pos.y + DY[d]};
+Point RvcState::step(Direction d) const {
+    switch (d) {
+        case Direction::North: return {m_pos.x,     m_pos.y - 1};
+        case Direction::South: return {m_pos.x,     m_pos.y + 1};
+        case Direction::East:  return {m_pos.x + 1, m_pos.y};
+        case Direction::West:  return {m_pos.x - 1, m_pos.y};
+    }
+    return m_pos;
 }
 
-// "Left of North" is West, etc. → rotate direction counterclockwise once
-static Direction leftOf(Direction dir) noexcept {
-    return static_cast<Direction>((static_cast<uint8_t>(dir) + 3U) % 4U);
-}
-static Direction rightOf(Direction dir) noexcept {
-    return static_cast<Direction>((static_cast<uint8_t>(dir) + 1U) % 4U);
-}
-static Direction opposite(Direction dir) noexcept {
-    return static_cast<Direction>((static_cast<uint8_t>(dir) + 2U) % 4U);
+Point RvcState::cellInFront() const { return step(m_dir); }
+
+Point RvcState::cellBehind() const {
+    switch (m_dir) {
+        case Direction::North: return step(Direction::South);
+        case Direction::South: return step(Direction::North);
+        case Direction::East:  return step(Direction::West);
+        case Direction::West:  return step(Direction::East);
+    }
+    return m_pos;
 }
 
-Position RvcState::cellInFront()  const noexcept { return offset(m_pos, m_dir); }
-Position RvcState::cellBehind()   const noexcept { return offset(m_pos, opposite(m_dir)); }
-Position RvcState::cellToLeft()   const noexcept { return offset(m_pos, leftOf(m_dir)); }
-Position RvcState::cellToRight()  const noexcept { return offset(m_pos, rightOf(m_dir)); }
+Point RvcState::cellLeft() const {
+    switch (m_dir) {
+        case Direction::North: return step(Direction::West);
+        case Direction::West:  return step(Direction::South);
+        case Direction::South: return step(Direction::East);
+        case Direction::East:  return step(Direction::North);
+    }
+    return m_pos;
+}
+
+Point RvcState::cellRight() const {
+    switch (m_dir) {
+        case Direction::North: return step(Direction::East);
+        case Direction::East:  return step(Direction::South);
+        case Direction::South: return step(Direction::West);
+        case Direction::West:  return step(Direction::North);
+    }
+    return m_pos;
+}

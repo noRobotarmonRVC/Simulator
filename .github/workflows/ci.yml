@@ -19,6 +19,7 @@ jobs:
 
       - name: Configure
         run: |
+          rm -rf build
           cmake -B build \
             -DCMAKE_BUILD_TYPE=Debug \
             -DCMAKE_CXX_COMPILER=g++ \

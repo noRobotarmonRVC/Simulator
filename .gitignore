@@ -1,0 +1,31 @@
+# Build output
+build/
+out/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+CTestTestfile.cmake
+
+# Binaries
+*.o
+*.a
+*.so
+*.out
+rvc_simulator
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Coverage
+*.gcda
+*.gcno
+*.gcov
+coverage.xml
+coverage/

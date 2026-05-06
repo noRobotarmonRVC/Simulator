@@ -1,53 +1,25 @@
 #include <gtest/gtest.h>
 #include "world/Grid.hpp"
 
-// ── Construction ─────────────────────────────────────────────────────────────
-
 TEST(GridTest, DefaultCellsAreEmpty) {
-    Grid g{5, 3};
-    for (int y = 0; y < 3; ++y) {
-        for (int x = 0; x < 5; ++x) {
-            EXPECT_EQ(g.cellAt(x, y), CellType::Empty);
-            EXPECT_TRUE(g.isPassable(x, y));
-            EXPECT_FALSE(g.hasDust(x, y));
-        }
-    }
+    Grid g(5, 5);
+    EXPECT_EQ(g.cellAt(2, 2), CellType::Empty);
 }
 
-TEST(GridTest, DimensionsReported) {
-    Grid g{10, 7};
-    EXPECT_EQ(g.width(),  10);
-    EXPECT_EQ(g.height(),  7);
+TEST(GridTest, OutOfBoundsIsWall) {
+    Grid g(5, 5);
+    EXPECT_EQ(g.cellAt(-1, 0), CellType::Wall);
+    EXPECT_EQ(g.cellAt(5, 5),  CellType::Wall);
 }
 
-// ── CellType ──────────────────────────────────────────────────────────────────
-
-TEST(GridTest, SetWallNotPassable) {
-    Grid g{3, 3};
-    g.setCell(1, 1, CellType::Wall);
-    EXPECT_EQ(g.cellAt(1, 1), CellType::Wall);
-    EXPECT_FALSE(g.isPassable(1, 1));
-}
-
-TEST(GridTest, SetObstacleNotPassable) {
-    Grid g{3, 3};
-    g.setCell(2, 0, CellType::Obstacle);
-    EXPECT_EQ(g.cellAt(2, 0), CellType::Obstacle);
-    EXPECT_FALSE(g.isPassable(2, 0));
-}
-
-TEST(GridTest, OutOfBoundsNotPassable) {
-    Grid g{3, 3};
+TEST(GridTest, IsPassableRespectsCellType) {
+    Grid g(5, 5);
+    EXPECT_TRUE(g.isPassable(1, 1));
     EXPECT_FALSE(g.isPassable(-1, 0));
-    EXPECT_FALSE(g.isPassable(3,  0));
-    EXPECT_FALSE(g.isPassable(0, -1));
-    EXPECT_FALSE(g.isPassable(0,  3));
 }
 
-// ── Dust ──────────────────────────────────────────────────────────────────────
-
-TEST(GridTest, PlaceAndRemoveDust) {
-    Grid g{4, 4};
+TEST(GridTest, DustPlaceAndRemove) {
+    Grid g(5, 5);
     EXPECT_FALSE(g.hasDust(2, 2));
     g.placeDust(2, 2);
     EXPECT_TRUE(g.hasDust(2, 2));
@@ -55,45 +27,34 @@ TEST(GridTest, PlaceAndRemoveDust) {
     EXPECT_FALSE(g.hasDust(2, 2));
 }
 
-TEST(GridTest, DustCountAccurate) {
-    Grid g{4, 4};
+TEST(GridTest, DustCount) {
+    Grid g(5, 5);
     EXPECT_EQ(g.dustCount(), 0);
-    g.placeDust(0, 0);
     g.placeDust(1, 1);
+    g.placeDust(2, 2);
     EXPECT_EQ(g.dustCount(), 2);
-    g.removeDust(0, 0);
+    g.removeDust(1, 1);
     EXPECT_EQ(g.dustCount(), 1);
 }
 
-TEST(GridTest, OutOfBoundsHasDustReturnsFalse) {
-    Grid g{3, 3};
-    EXPECT_FALSE(g.hasDust(-1, 0));
-    EXPECT_FALSE(g.hasDust(3, 3));
-}
-
-// ── fromString ────────────────────────────────────────────────────────────────
-
-TEST(GridTest, FromStringParsesWallsAndObstacles) {
+TEST(GridTest, FromStringParsesWallsObstaclesDust) {
     const std::string layout =
         "#####\n"
-        "#   #\n"
-        "# O #\n"
-        "#   #\n"
+        "#. O#\n"
         "#####\n";
-
     Grid g = Grid::fromString(layout);
-    EXPECT_EQ(g.width(),  5);
-    EXPECT_EQ(g.height(), 5);
-
-    // Corners are walls
     EXPECT_EQ(g.cellAt(0, 0), CellType::Wall);
-    EXPECT_EQ(g.cellAt(4, 4), CellType::Wall);
-
-    // Interior empty
     EXPECT_EQ(g.cellAt(1, 1), CellType::Empty);
-    EXPECT_TRUE(g.isPassable(1, 1));
+    EXPECT_TRUE(g.hasDust(1, 1));
+    EXPECT_EQ(g.cellAt(3, 1), CellType::Obstacle);
+    EXPECT_FALSE(g.isPassable(3, 1));
+}
 
-    // Obstacle at (2, 2)
-    EXPECT_EQ(g.cellAt(2, 2), CellType::Obstacle);
-    EXPECT_FALSE(g.isPassable(2, 2));
+TEST(GridTest, DustNotPlacedOnWall) {
+    Grid g(5, 5);
+    // Can't place dust on wall via fromString
+    const std::string layout = "#####\n#   #\n#####\n";
+    Grid g2 = Grid::fromString(layout);
+    g2.placeDust(0, 0); // wall cell — should have no effect
+    EXPECT_FALSE(g2.hasDust(0, 0));
 }

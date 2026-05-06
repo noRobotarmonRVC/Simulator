@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/rvc_tests.dir/test_grid.cpp.o CMakeFiles/rvc_tests.dir/test_rvc_state.cpp.o CMakeFiles/rvc_tests.dir/test_command_dispatcher.cpp.o CMakeFiles/rvc_tests.dir/test_renderer.cpp.o -o rvc_tests  ../librvc_core.a ../lib/libgtest_main.a ../lib/libgtest.a 

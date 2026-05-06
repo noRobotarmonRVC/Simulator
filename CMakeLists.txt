@@ -11,6 +11,7 @@ find_package(Threads REQUIRED)
 add_library(rvc_core STATIC
     src/world/Grid.cpp
     src/world/RvcState.cpp
+    src/command/CommandHandlers.cpp
     src/command/CommandDispatcher.cpp
     src/render/Renderer.cpp
 )
@@ -21,7 +22,6 @@ target_link_libraries(rvc_core PUBLIC Threads::Threads)
 add_executable(rvc_simulator
     src/main.cpp
     src/demo/Demo.cpp
-    src/network/Session.cpp
     src/network/TcpServer.cpp
 )
 target_include_directories(rvc_simulator PRIVATE src)
